@@ -15,6 +15,10 @@
   #include "../usermods/Battery/usermod_v2_Battery.h"
 #endif
 
+#ifdef USERMOD_DEEPSLEEP
+  #include "../usermods/deep_sleep/usermod_v2_deepsleep.h"
+#endif
+
 #ifdef USERMOD_DALLASTEMPERATURE
   #include "../usermods/Temperature/usermod_temperature.h"
 #endif
@@ -195,6 +199,10 @@ void registerUsermods()
   //usermods.add(new MyExampleUsermod());
   #ifdef USERMOD_BATTERY
   usermods.add(new UsermodBattery());
+  #endif
+
+  #ifdef USERMOD_DEEPSLEEP
+  usermods.add(new DeepSleepMod());
   #endif
 
   #ifdef USERMOD_DALLASTEMPERATURE
